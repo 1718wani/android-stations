@@ -5,7 +5,7 @@ project.gradle.buildFinished { BuildResult buildResult ->
             return
         }
         def taskRequest = taskRequests[0]
-        if (taskRequest.args.size() == 0 || taskRequest.args[0] == "help") {
+        if (taskRequest.args.size() == 0 || taskRequest.args[0] == "help" || taskRequest.args[0] == "prepareKotlinBuildScriptModel") {
             createRailwayFile("load_completed.txt", "Hello Railway Android!\nPlease commit this file as is.")
         } else if (taskRequest.args[0] == ":app:assembleDebug") {
             createRailwayFile("build_and_run_completed.txt", "Your first app is installed to the device!\nPlease commit this file as is.")
